@@ -7,7 +7,7 @@ import (
 	// timeパッケージのインポート
 	"time"
 
-	// TODO: textパッケージのインポート
+	"github.com/tenntenn/greeting/v2/text"
 )
 
 // デフォルトの言語
