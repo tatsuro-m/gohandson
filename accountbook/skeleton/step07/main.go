@@ -3,11 +3,16 @@
 package main
 
 import (
+	"database/sql"
 	"fmt"
 	"os"
+
+	"github.com/tenntenn/sqlite"
+
 	// TODO:
 	// SQLiteのドライバを使うために
 	// "github.com/tenntenn/sqlite"をインポートする
+	_ "github.com/tenntenn/sqlite"
 )
 
 func main() {
@@ -17,6 +22,7 @@ func main() {
 	// ドライバにはSQLiteを使って、
 	// ドライバ名はsqlite.DriverName
 	// accountbook.dbというファイルでデータベース接続を行う
+	db, err := sql.Open(sqlite.DriverName, "accountbook.db")
 	if err != nil {
 		// 標準エラー出力（os.Stderr)にエラーメッセージを出力して終了
 		fmt.Fprintln(os.Stderr, "エラー：", err)
