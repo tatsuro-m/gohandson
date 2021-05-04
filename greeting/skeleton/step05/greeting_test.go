@@ -36,3 +36,12 @@ func TestGreeting_Do(t *testing.T) {
 		t.Errorf("greeting message wont %s but got %s", expected, actual)
 	}
 }
+
+func TestSample(t *testing.T) {
+	expected := 1
+	actual := 2
+
+	if expected != actual {
+		t.Errorf("失敗しましたぜ。\n期待: %d\n実際: %d", expected, actual)
+	}
+}
